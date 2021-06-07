@@ -39,5 +39,8 @@ jspm_packages
 
 config.env
 
+next.config.js
+
+.next
 #Excluding build directory
 public/
