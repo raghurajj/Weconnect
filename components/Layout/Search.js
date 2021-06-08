@@ -32,7 +32,7 @@ function SearchComponent() {
 
       setResults(res.data);
     } catch (error) {
-      console.log("Error Searching");
+      alert("Error Searching");
     }
 
     setLoading(false);

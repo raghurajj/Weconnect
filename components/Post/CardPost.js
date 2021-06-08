@@ -62,20 +62,20 @@ function CardPost({ post, user, setPosts, setShowToastr }) {
       <Segment basic>
         <Card color="teal" fluid>
           {post.picUrl && (
-            <Image
-              src={post.picUrl}
-              style={{ cursor: "pointer" }}
-              centered
-              wrapped
-              // ui={false}
-              alt="PostImage"
-              size='large'
-              onClick={() => setShowModal(true)}
-            />
-          )}
+              <Image
+                src={post.picUrl}
+                style={{ cursor: "pointer" }}
+                centered
+                wrapped
+                // ui={false}
+                alt="PostImage"
+                size='large'
+                onClick={() => setShowModal(true)}
+              />
+            )}
 
           <Card.Content>
-            <Image floated="left"  src={post.user.profilePicUrl} avatar circular />
+            <Image floated="left" src={post.user.profilePicUrl} avatar circular />
 
             {(user.role === "root" || post.user._id === user._id) && (
               <>

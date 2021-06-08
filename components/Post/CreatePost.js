@@ -20,7 +20,6 @@ function CreatePost({ user, setPosts }) {
     if (name === "media") {
       setMedia(files[0]);
       setMediaPreview(URL.createObjectURL(files[0]));
-      console.log(mediaPreview)
     }
 
     setNewPost(prev => ({ ...prev, [name]: value }));

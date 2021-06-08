@@ -48,6 +48,7 @@ function Index({ user, postsData, errorLoading }) {
       {showToastr && <PostDeleteToastr />}
       <Segment>
         <CreatePost user={user} setPosts={setPosts} />
+
         {posts.length === 0 || errorLoading?(<NoPosts/>):(
           <InfiniteScroll
             hasMore={hasMore}
@@ -66,7 +67,6 @@ function Index({ user, postsData, errorLoading }) {
             ))}
           </InfiniteScroll>
         )}
-        
       </Segment>
     </>
   );
