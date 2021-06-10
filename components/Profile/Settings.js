@@ -63,20 +63,18 @@ function Settings({ newMessagePopup }) {
             />
           </List.Content>
 
-          {newMessageSettings &&  
-            <div style={{ marginTop: "10px" }}>
-              Control whether a Popup should appear when there is a New Message or not.
-              <br />
-              <br />
-              <Checkbox
-                checked={popupSetting}
-                toggle
-                onChange={() =>
-                  toggleMessagePopup(popupSetting, setPopupSetting, setSuccess)
-                }
-              />
-            </div>
-          }
+          <div style={{ marginTop: "10px" }}>
+            Control whether a Popup should appear when there is a New Message or not.
+            <br />
+            <br />
+            <Checkbox
+              checked={popupSetting}
+              toggle
+              onChange={() =>
+                toggleMessagePopup(popupSetting, setPopupSetting, setSuccess)
+              }
+            />
+          </div>
         </List.Item>
 
         <Divider />
