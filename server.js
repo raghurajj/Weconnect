@@ -29,7 +29,7 @@ io.on("connection", socket => {
         users: users.filter(user => user.userId !== userId)
       });
     }, 10000);
-  }); 
+  });
 
   socket.on("loadMessages", async ({ userId, messagesWith }) => {
     const { chat, error } = await loadMessages(userId, messagesWith);
@@ -86,6 +86,7 @@ nextApp.prepare().then(() => {
   app.use("/api/profile", require("./api/profile"));
   app.use("/api/notifications", require("./api/notifications"));
   app.use("/api/chats", require("./api/chats"));
+  app.use("/api/reset", require("./api/reset"));
 
   app.all("*", (req, res) => handle(req, res));
 

@@ -41,7 +41,7 @@ function ChatListSearch({ chats, setChats }) {
 
   const addChat = result => {
     const alreadyInChat =
-      chats && chats.length > 0 &&
+      chats.length > 0 &&
       chats.filter(chat => chat.messsagesWith === result._id).length > 0;
 
     if (alreadyInChat) {

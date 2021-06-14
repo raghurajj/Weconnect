@@ -46,7 +46,7 @@ function Messages({ chatsData, user }) {
         users.length > 0 && setConnectedUsers(users);
       });
 
-      if (chats && chats.length > 0 && !router.query.message) {
+      if (chats.length > 0 && !router.query.message) {
         router.push(`/messages?message=${chats[0].messagesWith}`, undefined, {
           shallow: true
         });
@@ -224,7 +224,7 @@ function Messages({ chatsData, user }) {
           <ChatListSearch chats={chats} setChats={setChats} />
         </div>
 
-        {chats && chats.length > 0 ? (
+        {chats.length > 0 ? (
           <>
             <Grid stackable>
               <Grid.Column width={4}>

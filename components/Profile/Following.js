@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Image, List, Message } from "semantic-ui-react";
+import { Button, Image, List } from "semantic-ui-react";
 import Spinner from "../Layout/Spinner";
 import { NoFollowData } from "../Layout/NoData";
 import { followUser, unfollowUser } from "../../utils/profileActions";
@@ -80,7 +80,7 @@ const Following = ({
           );
         })
       ) : (
-        <Message icon="user outline" info content={`User does not follow any users`} />
+        <NoFollowData followingComponent={true} />
       )}
     </>
   );

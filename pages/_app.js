@@ -19,6 +19,7 @@ class MyApp extends App {
       ctx.pathname === "/post/[postId]" ||
       ctx.pathname === "/messages";
     if (!token) {
+      destroyCookie(ctx, "token");
       protectedRoutes && redirectUser(ctx, "/login");
     }
     //

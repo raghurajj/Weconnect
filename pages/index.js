@@ -16,7 +16,7 @@ import MessageNotificationModal from "../components/Home/MessageNotificationModa
 import newMsgSound from "../utils/newMsgSound";
 
 function Index({ user, postsData, errorLoading }) {
-  const [posts, setPosts] = useState(postsData||[]);
+  const [posts, setPosts] = useState(postsData || []);
   const [showToastr, setShowToastr] = useState(false);
   const [hasMore, setHasMore] = useState(true);
 
