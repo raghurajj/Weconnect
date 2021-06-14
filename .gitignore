@@ -41,6 +41,8 @@ config.env
 
 next.config.js
 
+.gitignore
+
 .next
 #Excluding build directory
 public/

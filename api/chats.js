@@ -3,7 +3,9 @@ const router = express.Router();
 const ChatModel = require("../models/ChatModel");
 const UserModel = require("../models/UserModel");
 const authMiddleware = require("../middleware/authMiddleware");
-
+const {
+  setMsgToRead
+} = require("../utilsServer/messageActions");
 // GET ALL CHATS
 
 router.get("/", authMiddleware, async (req, res) => {
@@ -11,7 +13,7 @@ router.get("/", authMiddleware, async (req, res) => {
     const { userId } = req;
 
     const user = await ChatModel.findOne({ user: userId }).populate("chats.messagesWith");
-
+    setMsgToRead(userId);
     let chatsToBeSent = [];
 
     if (user.chats.length > 0) {

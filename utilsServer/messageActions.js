@@ -87,6 +87,21 @@ const setMsgToUnread = async userId => {
   }
 };
 
+const setMsgToRead = async userId => {
+  try {
+    const user = await UserModel.findById(userId);
+
+    if (user.unreadMessage) {
+      user.unreadMessage = false;
+      await user.save();
+    }
+
+    return;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 const deleteMsg = async (userId, messagesWith, messageId) => {
   try {
     const user = await ChatModel.findOne({ user: userId });
@@ -119,4 +134,4 @@ const deleteMsg = async (userId, messagesWith, messageId) => {
   }
 };
 
-module.exports = { loadMessages, sendMsg, setMsgToUnread, deleteMsg };
+module.exports = { loadMessages, sendMsg, setMsgToUnread,setMsgToRead, deleteMsg };

@@ -224,7 +224,7 @@ function Messages({ chatsData, user }) {
           <ChatListSearch chats={chats} setChats={setChats} />
         </div>
 
-        {chats.length > 0 ? (
+        {chats && chats.length > 0 ? (
           <>
             <Grid stackable>
               <Grid.Column width={4}>
