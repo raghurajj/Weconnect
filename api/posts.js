@@ -81,7 +81,8 @@ router.get("/", authMiddleware, async (req, res) => {
     }
     //
     else {
-      for (let i = 0; i < loggedUser.following.length; i++) {
+      
+    for (let i = 0; i < loggedUser.following.length; i++) {
         const foundPostsFromFollowing = posts.filter(
           post =>
             post.user._id.toString() === loggedUser.following[i].user.toString() 
